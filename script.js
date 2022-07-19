@@ -25,9 +25,15 @@ btn.addEventListener('click', () => {
 
 function useTemplate(letter) {
   let passwordLength = lengthNumber.value;
-  for (let i = 0; i < passwordLength; i++)
-    result += letter.charAt(Math.floor(Math.random() * letter.length));
-  text.innerText = result;
+  if (passwordLength > 20) {
+    alert('Your password is too long. Max size 20');
+  } else {
+    for (let i = 0; i < passwordLength; i++)
+      result += letter.charAt(Math.floor(Math.random() * letter.length));
+    text.innerText = result;
+  }
+
+
 }
 
 function checkChar() {

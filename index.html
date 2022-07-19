@@ -11,16 +11,24 @@
 
 <body>
   <div class='box'>
+    <div id='text' class='text'></div>
+
     <label>
-      <div id='text'></div>
-      <h2>Password Length</h2>
-      <input type='number' id='lengthNumber'>
-      <h2>Contain Numbers</h2>
-      <input type='checkbox' id='containNumber'>
-      <h2>Contain Symbols</h2>
-      <input type='checkbox' id='containSymbols'>
+      <div class='password'>
+        <h2>Password Length</h2>
+        <input type='number' id='lengthNumber' class='lengthNumber'>
+      </div>
+      <div class='number'>
+        <h2>Contain Numbers</h2>
+        <input type='checkbox' id='containNumber' class='containNumber'>
+      </div>
+
+      <div class='symbol'>
+        <h2>Contain Symbols</h2>
+        <input type='checkbox' id='containSymbols' class='containSymbols'>
+      </div>
+      <button id='btn' class='btn'>Wygeneruj</button>
     </label>
-    <button id='btn'>Wygeneruj</button>
   </div>
 
   <script src='script.js'></script>
