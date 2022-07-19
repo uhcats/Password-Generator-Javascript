@@ -35,6 +35,9 @@ body {
   font-size: 40px;
   padding: 20px;
 }
+.text:hover .copy{
+  display: flex;
+}
 .password,
 .number,
 .symbol {
@@ -67,4 +70,18 @@ input[type=checkbox] {
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;
+}
+
+.copy{
+  background-color: #ecb602;
+  border: none;
+  color: rebeccapurple;
+  cursor: pointer;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
 }

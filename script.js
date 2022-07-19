@@ -3,6 +3,7 @@ const containNumber = document.getElementById('containNumber');
 const containSymbols = document.getElementById('containSymbols');
 const text = document.getElementById('text');
 const btn = document.getElementById('btn');
+const copy = document.getElementById('copy');
 
 let result = "";
 const downLetter = "qwertyuiopasdfghjklzxcvbnm";
@@ -16,7 +17,7 @@ const NumberDownLetter = downLetter.concat(number);
 const SymbolsAndNumber = SymbolsDownLetter.concat(NumberDownLetter);
 
 btn.addEventListener('click', () => {
-  text.innerText = "";
+  text.textContent = "";
   result = "";
   return checkChar()
 
@@ -30,7 +31,7 @@ function useTemplate(letter) {
   } else {
     for (let i = 0; i < passwordLength; i++)
       result += letter.charAt(Math.floor(Math.random() * letter.length));
-    text.innerText = result;
+    text.textContent = result;
   }
 
 
@@ -46,3 +47,19 @@ function checkChar() {
   else
     useTemplate(downLetter);
 }
+
+copy.addEventListener('click', () => {
+  const password = text.textContent;
+  if (!password) {
+    return
+  }
+
+  // To copy element Use this
+  const textarea = document.createElement("textarea");
+  textarea.value = password;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+  alert("Password copied");
+})
